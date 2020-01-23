@@ -11,10 +11,10 @@ export const LOGOUT_FAILURE = "LOGOUT_FAILURE";
 export const VERIFY_REQUEST = "VERIFY_REQUEST";
 export const VERIFY_SUCCESS = "VERIFY_SUCCESS";
 
-////////DESCRIPTION
+////////
 // Declaring the different Actions.
 // Redux Thunks is being used.
-// A thunk is another word for a specal function that s return by another one.
+// A thunk is a special function that is return by another one.
 //
 ////////
 const requestLogin = () => {
