@@ -5,6 +5,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Workout from "./components/Workout";
+import Header from "./components/Header";
 
 // connect() links up the component to the redux store to (be able) to pull out the data needed.
 
@@ -25,7 +26,11 @@ function App(props) {
         component={Workout}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
-      />
+      >
+        {/* !!!Behöver nog fixas till så att inte header renderas om i onödan */}
+        <Header />
+        <Workout />
+      </ProtectedRoute>
       <Route path="/login" component={Login} />
     </Switch>
   );
