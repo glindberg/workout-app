@@ -1,0 +1,17 @@
+Två views
+Live-view.
+Post-training view.
+
+ I Live view
+Man behöver kunna avsluta/klarmarkera sin övning. Då fälls övningsdiven ihop och lägger sig ovanför.
+Sen ska man kunna trycka på den och den expanderar ner(fortfarande i Live view).
+
+När man har gjort en övning töm inte vikt boxen utan låt värdet vara kvar.
+
+
+
+Inloggningen är det enda som är gjort. Hur ska jag spara state? 
+
+1. Fyll i övning tryck ok och genomför övningen med antal repetitioner. 
+2. Klarmarkera övningen =  flyttas ner längre ned på sidan. 
+3. I slutet av passet submitta alla övningar till Firebase.

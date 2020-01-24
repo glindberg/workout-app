@@ -21,6 +21,7 @@ export default (
   },
   action
 ) => {
+  // User login attempt ongoing, clear previous errors
   switch (action.type) {
     case LOGIN_REQUEST:
       return {
@@ -28,6 +29,7 @@ export default (
         isLoggingIn: true,
         loginError: false
       };
+    //Login attempt successful - attempt finished.
     case LOGIN_SUCCESS:
       return {
         ...state,
@@ -35,6 +37,7 @@ export default (
         isAuthenticated: true,
         user: action.user
       };
+    // Login attempt unsuccessful
     case LOGIN_FAILURE:
       return {
         ...state,

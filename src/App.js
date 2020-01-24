@@ -27,9 +27,8 @@ function App(props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       >
-        {/* !!!Behöver nog fixas till så att inte header renderas om i onödan */}
         <Header />
-        <Workout />
+        {/* <Workout /> */}
       </ProtectedRoute>
       <Route path="/login" component={Login} />
     </Switch>
@@ -42,4 +41,6 @@ function mapStateToProps(state) {
     isVerifying: state.auth.isVerifying
   };
 }
+//connect() links up our component to the redux store to  enable the data we need to be pulled out.
+//To do this to define a mapStateToProps function at the bottom of our component and pass it to connect.
 export default connect(mapStateToProps)(App);
