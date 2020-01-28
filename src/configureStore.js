@@ -10,6 +10,8 @@ import rootReducer from "./reducers";
 //
 ////////
 
+//This function will be the first that runs when the app starts up/user refresh.
+//verifyAuth() is dispatched because it ensures it will be the first thing happening to the store and if a user session exists it will authenticate our user before the rest of the app loads which will let us route to our secure route without showing login page.
 export default function configureStore(persistedState) {
   const store = createStore(
     rootReducer,

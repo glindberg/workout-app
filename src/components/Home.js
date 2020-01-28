@@ -10,7 +10,8 @@ class Home extends Component {
     const { isLoggingOut, logoutError } = this.props;
     return (
       <div>
-        <h1>This is your app's protected area.</h1>
+        <h1>Home component</h1>
+        <h2>This is your app's protected area.</h2>
         <p>Any routes here will also be protected</p>
         <button onClick={this.handleLogout}>Logout</button>
         {isLoggingOut && <p>Logging Out....</p>}

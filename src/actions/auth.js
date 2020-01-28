@@ -70,7 +70,7 @@ export const loginUser = (email, password) => dispatch => {
   dispatch(requestLogin());
   myFirebase
     .auth()
-    .signInWithEmailAndPassword(email, password)
+    .signInWithEmailAndPassword(email, password) //inbyggda firebasefunktioner
     .then(user => {
       dispatch(receiveLogin(user));
     })
@@ -84,7 +84,7 @@ export const logoutUser = () => dispatch => {
   dispatch(requestLogout());
   myFirebase
     .auth()
-    .signOut()
+    .signOut() //även denna inbyggd firebasefunktion
     .then(() => {
       dispatch(receiveLogout());
     })
@@ -95,6 +95,8 @@ export const logoutUser = () => dispatch => {
     });
 };
 
+//Verifiera authentiseringen/checka preexisting session vid t.ex. refresh.
+//recieveLogin is for repopulating of the user object in the reducer if a user "logs in" with a preexisting session. It checks if user is null because we only want to log someone in if firebase finds a user session.
 export const verifyAuth = () => dispatch => {
   dispatch(verifyRequest());
   myFirebase.auth().onAuthStateChanged(user => {

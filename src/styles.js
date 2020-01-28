@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const SCMainContainer = styled.div`
   background: rgb(2, 0, 36);
@@ -10,13 +10,13 @@ export const SCMainContainer = styled.div`
     rgba(0, 212, 255, 1) 100%
   );
   /* border: 2px solid lightsalmon; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  li {
+  height: 95vh;
+  /* align-items: center; */
+  /* li {
     margin-top: 2rem;
-  }
+  } */
 `;
+
 export const SCHeader = styled.div`
   background: linear-gradient(
     90deg,
@@ -29,4 +29,15 @@ export const SCHeader = styled.div`
   /* border: 2px solid blue; */
   display: flex;
   justify-content: space-evenly;
+`;
+
+export const SCExercise = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 2em; */
+  select {
+    height: 2em;
+    margin: 0 6rem 0 6rem;
+  }
 `;
