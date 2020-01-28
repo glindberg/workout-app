@@ -10,7 +10,7 @@ export const SCMainContainer = styled.div`
     rgba(0, 212, 255, 1) 100%
   );
   /* border: 2px solid lightsalmon; */
-  height: 95vh;
+  height: 100vh;
   /* align-items: center; */
   /* li {
     margin-top: 2rem;
@@ -35,9 +35,17 @@ export const SCExercise = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-left: 2em; */
+  margin-top: 2em;
   select {
     height: 2em;
     margin: 0 6rem 0 6rem;
   }
+`;
+
+export const SCExerciseManagement = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  /* button {margin: 0 6rem 0 6rem}; */
 `;
