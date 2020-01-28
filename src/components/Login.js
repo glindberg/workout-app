@@ -61,7 +61,9 @@ class Login extends Component {
   render() {
     const { classes, loginError, isAuthenticated } = this.props;
     if (isAuthenticated) {
+      //Om autentiserad kom vidare in till appen
       return <Redirect to="/" />;
+      //Annars till login
     } else {
       return (
         <Container component="main" maxWidth="xs">

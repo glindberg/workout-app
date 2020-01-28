@@ -1,10 +1,11 @@
 import React from "react";
+import Header from "./Header";
 import { SCMainContainer, SCExercise } from "../styles";
 
 const Workout = () => {
   return (
     <SCMainContainer>
-      onSubmit
+      <Header />
       <SCExercise>
         <p>Exercise 1 :</p>
         <select>
