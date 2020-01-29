@@ -15,3 +15,5 @@ Inloggningen är det enda som är gjort. Hur ska jag spara state?
 1. Fyll i övning tryck ok och genomför övningen med antal repetitioner. 
 2. Klarmarkera övningen =  flyttas ner längre ned på sidan. 
 3. I slutet av passet submitta alla övningar till Firebase.
+
+Header är nu en del av Workout. Borde brytas ut och ligga som en egen component i App.js
