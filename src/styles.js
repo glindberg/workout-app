@@ -31,7 +31,7 @@ export const SCHeader = styled.div`
   justify-content: space-evenly;
 `;
 
-export const SCExercise = styled.div`
+export const SCExerciseInput = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +40,12 @@ export const SCExercise = styled.div`
     height: 2em;
     margin: 0 6rem 0 6rem;
   }
+`;
+
+export const SCExerciseList = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const SCExerciseManagement = styled.div`

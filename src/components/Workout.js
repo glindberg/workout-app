@@ -1,64 +1,91 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import { SCMainContainer, SCExercise, SCExerciseManagement } from "../styles";
-import { logoutUser } from "../actions";
+import {
+  SCMainContainer,
+  SCExerciseInput,
+  SCExerciseList,
+  SCExerciseManagement
+} from "../styles";
 
 class Workout extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      exercise: ""
-    };
-  }
-
-  handleSubmit = event => {
-    event.preventDefault();
-    const data = this.state;
-    console.log("Final data" + JSON.stringify(data));
+  state = {
+    post: {
+      exercise: "",
+      weight: ""
+    },
+    exercisesInWorkout: []
   };
 
-  handleInputChange = event => {
-    event.preventDefault();
-    // console.log(event.target.name);
-    // console.log(event.target.value);
-    this.setState({
-      //Brackets enables the ability to set event.target.name
-      [event.target.name]: event.target.value
-    });
+  handleChange = e => {
+    const { name, value } = e.target;
+
+    this.setState(prevState => ({
+      post: { ...prevState.post, [name]: value }
+    }));
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log("Pre submit" + JSON.stringify(this.state.post));
+    this.setState(prevState => ({
+      exercisesInWorkout: [...prevState.exercisesInWorkout, prevState.post],
+      post: { exercise: "", weight: "" }
+    }));
+  };
+
+  handleRemove = e => {
+    this.setState = "";
   };
 
   render() {
-    const { exercise } = this.state;
     return (
       <SCMainContainer>
         <Header />
 
-        <SCExerciseManagement>
-          {/* Borde startas automatiskt när man startar första övningen */}
-          <h2>Timer: </h2> <button>Start/Stop</button> <button>Pause</button>
-        </SCExerciseManagement>
+        <SCExerciseInput>
+          <form>
+            <input
+              name="exercise"
+              onChange={this.handleChange}
+              type="text"
+              value={this.state.post.exercise}
+              placeholder="Exercise.."
+            />
+            <input
+              name="weight"
+              onChange={this.handleChange}
+              type="text"
+              value={this.state.post.weight}
+              placeholder="Weight.."
+            />
 
-        <SCExercise>
-          <p>The exercise is: {exercise}</p>
-          <form onSubmit={this.handleSubmit}>
-            <p>
-              <input
-                type="text"
-                // placeholder="Gustav"
-                name="exercise"
-                value={exercise}
-                onChange={this.handleInputChange}
-              />
-            </p>
-            <p>
-              <button>Send Message</button>
-            </p>
+            <button onClick={this.handleSubmit}>Add</button>
           </form>
-
+        </SCExerciseInput>
+        <SCExerciseList>
           <ul>
-            <li>{exercise}</li>
+            {this.state.exercisesInWorkout.map((exercise, index) => (
+              <li key={index}>
+                {exercise.exercise + " "} Weight: {exercise.weight + "kg "}{" "}
+                Repetitions:{" "}
+                <select name="repetitions">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+                <button>Add set</button>
+                <button onClick={this.handleRemove}>Remove</button>
+              </li>
+            ))}
           </ul>
-        </SCExercise>
+        </SCExerciseList>
       </SCMainContainer>
     );
   }
